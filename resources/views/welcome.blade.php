@@ -261,51 +261,45 @@
 											</header>
 											<!-- messageForm -->
 											<div class="messageForm">
-												<form id="contactForm" data-toggle="validator">
-													<div class="row">
-														<div class="col-12 col-sm-6">
-															<div class="form-group position-relative">
-																<input id="name" type="text" class="form-control w-100 d-block" required
-																	data-error="NEW ERROR MESSAGE">
-																<label class="labelAbsolute mb-0 font-weight-normal position-absolute">Nama</label>
-															</div>
-														</div>
-														<div class="col-12 col-sm-6">
-															<div class="form-group position-relative">
-																<input id="email" type="email" class="form-control w-100 d-block" required
-																	data-error="NEW ERROR MESSAGE">
-																<label class="labelAbsolute mb-0 font-weight-normal position-absolute">Email</label>
-															</div>
-														</div>
-														<div class="col-12 col-sm-6">
-															<div class="form-group position-relative">
-																<input type="tel" type="tel" class="form-control w-100 d-block" required
-																	data-error="NEW ERROR MESSAGE">
-																<label class="labelAbsolute mb-0 font-weight-normal position-absolute">Nomor Whatsapp</label>
-															</div>
-														</div>
-														<div class="col-12 col-sm-6">
-															<div class="form-group position-relative">
-																<input type="sub" type="text" class="form-control w-100 d-block" required
-																	data-error="NEW ERROR MESSAGE">
-																<label class="labelAbsolute mb-0 font-weight-normal position-absolute">Asal Sekolah</label>
-															</div>
-														</div>
-														<div class="col-12 col-sm-6">
-															<div class="form-group position-relative">
-																<textarea id="message" class="form-control w-100 d-block textareaInput" required
-																	data-error="NEW ERROR MESSAGE"></textarea>
-																<label class="labelAbsolute mb-0 font-weight-normal position-absolute">Kelas</label>
-															</div>
-														</div>
-													</div>
-													<div class="col-12">
-														<div id="msgSubmit" class="form-message hidden"></div>
-													</div>
-													<button id="form-submit" type="submit"
-														class="btn btnThemeOutline position-relative btnMinSmall mt-4 mt-lg-8"
-														data-hover="Send Message"><span class="d-block btnText">Mendaftar</span></button>
-												</form>
+												<form id="contactForm" action="{{ route('form.store') }}" method="POST">
+                                                    @csrf
+                                                    <div class="row">
+                                                        <div class="col-12 col-sm-6">
+                                                            <div class="form-group position-relative">
+                                                                <input id="name" name="name" type="text" class="form-control w-100 d-block" required>
+                                                                <label class="labelAbsolute mb-0 font-weight-normal position-absolute">Nama</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-sm-6">
+                                                            <div class="form-group position-relative">
+                                                                <input id="email" name="email" type="email" class="form-control w-100 d-block" required>
+                                                                <label class="labelAbsolute mb-0 font-weight-normal position-absolute">Email</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-sm-6">
+                                                            <div class="form-group position-relative">
+                                                                <input id="phone" name="phone" type="tel" class="form-control w-100 d-block" required>
+                                                                <label class="labelAbsolute mb-0 font-weight-normal position-absolute">Nomor Whatsapp</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-sm-6">
+                                                            <div class="form-group position-relative">
+                                                                <input id="school" name="school" type="text" class="form-control w-100 d-block" required>
+                                                                <label class="labelAbsolute mb-0 font-weight-normal position-absolute">Asal Sekolah</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-sm-6">
+                                                            <div class="form-group position-relative">
+                                                                <textarea id="class" name="class" class="form-control w-100 d-block textareaInput" required></textarea>
+                                                                <label class="labelAbsolute mb-0 font-weight-normal position-absolute">Kelas</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <button id="form-submit" type="submit" class="btn btnThemeOutline position-relative btnMinSmall mt-4 mt-lg-8">
+                                                        <span class="d-block btnText">Mendaftar</span>
+                                                    </button>
+                                                </form>
+
 											</div>
 										</div>
 									</div>
