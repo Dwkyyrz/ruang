@@ -89,7 +89,8 @@
 											<!-- headingTitle -->
 											<span class="d-block wow fadeInLeft" data-wow-delay="2.5s">Sudirman</span>
 										</h1> --}}
-										<p class="wow fadeInLeft" data-wow-delay="2.8s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel mattis tellus, non rutru m ante. Morbi sed ipsum cursus, blandit odio</p>
+										<p class="wow fadeInLeft" data-wow-delay="2.8s">
+											Selamat datang di ruangroto, <br>kelas terampil digital</p>
 										<span class="d-block wow fadeInLeft" data-wow-delay="2.5s">Sudirman</span>
 
 									</div>
