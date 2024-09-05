@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<!-- set the encoding of your site -->
-    <title>Ruang | Rotonengen </title>
+    <title>Ruang | Rotonengen</title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png" />
     <link rel="shortcut icon" type="image/png" sizes="48x48" href="images/favicons/favicon.ico" />
