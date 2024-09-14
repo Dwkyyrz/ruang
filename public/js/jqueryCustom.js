@@ -1,104 +1,104 @@
-jQuery(window).on('load', function() {
+// jQuery(window).on('load', function() {
 
-	jQuery("#contactForm").validator().on("submit", function (event) {
+// 	jQuery("#contactForm").validator().on("submit", function (event) {
 
-		"use strict";
+// 		"use strict";
 
-		if (event.isDefaultPrevented()) {
-			// handle the invalid form...
-			formError();
-			submitMSG(false, "Please Follow Error Messages and Complete as Required");
-		} else {
-			// everything looks good!
-			event.preventDefault();
-			submitForm();
-		}
-	});
+// 		if (event.isDefaultPrevented()) {
+// 			// handle the invalid form...
+// 			formError();
+// 			submitMSG(false, "Please Follow Error Messages and Complete as Required");
+// 		} else {
+// 			// everything looks good!
+// 			event.preventDefault();
+// 			submitForm();
+// 		}
+// 	});
 
-	function submitForm(){
+// 	function submitForm(){
 		
-		"use strict";
+// 		"use strict";
 
-		// Initiate Variables With Form Content
-		var name = $("#name").val();
-		var email = $("#email").val();
-		var tel = $("#tel").val();
-		var sub = $("#sub").val();
-		var message = $("#message").val();
+// 		// Initiate Variables With Form Content
+// 		var name = $("#name").val();
+// 		var email = $("#email").val();
+// 		var tel = $("#tel").val();
+// 		var sub = $("#sub").val();
+// 		var message = $("#message").val();
 
-		$.ajax({
-			type: "POST",
-			url: "php/form-process.php",
-			data: "name=" + name + "&email=" + email + "&message=" + message + "&tel=" + tel + "&sub=" + sub,
-			success : function(text){
-				if (text == "success"){
-					formSuccess();
-				} else {
-					formError();
-					submitMSG(false,text);
-				}
-			}
-		});
-	}
+// 		$.ajax({
+// 			type: "POST",
+// 			url: "php/form-process.php",
+// 			data: "name=" + name + "&email=" + email + "&message=" + message + "&tel=" + tel + "&sub=" + sub,
+// 			success : function(text){
+// 				if (text == "success"){
+// 					formSuccess();
+// 				} else {
+// 					formError();
+// 					submitMSG(false,text);
+// 				}
+// 			}
+// 		});
+// 	}
 
-	function formSuccess(){
+// 	function formSuccess(){
 		
-		"use strict";
+// 		"use strict";
 
-		$("#contactForm")[0].reset();
-		submitMSG(true, "Thank you for your submission :)")
-	}
+// 		$("#contactForm")[0].reset();
+// 		submitMSG(true, "Thank you for your submission :)")
+// 	}
 
-	function formError(){
+// 	function formError(){
 		
-		"use strict";
+// 		"use strict";
 
-		$("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-			$(this).removeClass();
-		});
-	}
+// 		$("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+// 			$(this).removeClass();
+// 		});
+// 	}
 
-	function submitMSG(valid, msg){
+// 	function submitMSG(valid, msg){
 		
-		"use strict";
+// 		"use strict";
 
-		if(valid){
-			var msgClasses = "success form-message";
-		} else {
-			var msgClasses = "error form-message";
-		}
-		$("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
-	}
+// 		if(valid){
+// 			var msgClasses = "success form-message";
+// 		} else {
+// 			var msgClasses = "error form-message";
+// 		}
+// 		$("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
+// 	}
 
 
 
-	initIsoTop();
+// 	initIsoTop();
 	
-	// IsoTop init
-	function initIsoTop() {
-		"use strict";
+// 	// IsoTop init
+// 	function initIsoTop() {
+// 		"use strict";
 
-		var isotopeHolder = jQuery('.isoContentHolder'),
-			win = jQuery(window);
-		jQuery('.isoFiltersList a').on( "click", function(e){
-			e.preventDefault();
+// 		var isotopeHolder = jQuery('.isoContentHolder'),
+// 			win = jQuery(window);
+// 		jQuery('.isoFiltersList a').on( "click", function(e){
+// 			e.preventDefault();
 			
-			jQuery('.isoFiltersList li').removeClass('active');
-			jQuery(this).parent('li').addClass('active');
-			var selector = jQuery(this).attr('data-filter');
-			isotopeHolder.isotope({ filter: selector });
-		});
-		jQuery('.isoContentHolder').isotope({
-			itemSelector: '.isoCol',
-			transitionDuration: '0.6s',
-			masonry: {
-				columnWidth: '.isoCol'
-			}
-		});
-	}
+// 			jQuery('.isoFiltersList li').removeClass('active');
+// 			jQuery(this).parent('li').addClass('active');
+// 			var selector = jQuery(this).attr('data-filter');
+// 			isotopeHolder.isotope({ filter: selector });
+// 		});
+// 		jQuery('.isoContentHolder').isotope({
+// 			itemSelector: '.isoCol',
+// 			transitionDuration: '0.6s',
+// 			masonry: {
+// 				columnWidth: '.isoCol'
+// 			}
+// 		});
+// 	}
 
-	jQuery( "#loader" ).delay( 600 ).fadeOut( 300 );
-});
+// 	jQuery( "#loader" ).delay( 600 ).fadeOut( 300 );
+// });
 
 jQuery(document).on('change', function(){
 	jQuery('.form-control').each(function(){

@@ -12,6 +12,8 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+
 	<!-- set the page title -->
 	<title>Scavvios | One Page Parallax HTML5 Template</title>
 	<!-- inlcude google poppins font cdn link -->
@@ -24,6 +26,8 @@
 	<link rel="stylesheet" href="css/colors.css">
 	<!-- include the site responsive stylesheet -->
 	<link rel="stylesheet" href="css/responsive.css">
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 	<!-- pageWrapper -->
@@ -31,55 +35,34 @@
 		<!-- phStickyWrap -->
 		<div class="phStickyWrap">
 			<!-- pageHeader -->
-			<header id="pageHeader" class="headerFixer">
-				<div class="container">
-					<div class="position-relative">
-						<div class="row">
-							<div class="col-6 col-md-3">
-								<!-- logo -->
-								<div class="logo-ruangroto">
-									<a href="index.html">
+			<header class="navbar">
+					<div class="navbar-container">
+							<div class="logo">
+									<a href="/">
 										<img src="images/favicons/ruangroto.png" class="img-fluid" alt="scavvios">
 									</a>
-								</div>
 							</div>
-							<div class="col-6 col-md-9 position-static">
-								<!-- pageNav -->
-								<nav id="pageNav" class="navbar navbar-expand-md navbar-dark rounded-0 border-0 px-0 pt-0 pt-md-2 pb-0 justify-content-end position-static">
-									<!-- pgNavOpener -->
-									<button class="navbar-toggler pgNavOpener position-relative p-0 border-0 rounded-0 mt-2" type="button" data-toggle="collapse" data-target="#pageMainNavCollapse" aria-controls="pageMainNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
-										<!-- icnBar -->
-										<span class="icnBar position-absolute"><span class="sr-only">menu</span></span>
-									</button>
-									<!-- pageMainNavCollapse -->
-									<div class="collapse navbar-collapse justify-content-md-end pageMainNavCollapse" id="pageMainNavCollapse">
-										<!-- pgMainNavigation -->
-										<ul class="navbar-nav text-uppercase pgMainNavigation font-weight-normal">
-											<li class="nav-item">
-												<a class="nav-link smooth" href="#pageWrapper">Beranda</a>
-											</li>
-											<li class="nav-item">
-												<a class="nav-link smooth" href="#about">Tentang</a>
-											</li>
-											<li class="nav-item">
-												<a class="nav-link smooth" href="#contact">Daftar</a>
-											</li>
-										</ul>
-									</div>
-								</nav>
-							</div>
-						</div>
+							<input type="checkbox" id="menu-toggle" class="menu-toggle">
+							<label for="menu-toggle" class="menu-icon">
+									<span class="burger-icon"></span>
+							</label>
+							<nav class="nav-menu">
+									<ul>
+											<li><a href="#hero" class="active">BERANDA</a></li>
+											<li><a href="#about">TENTANG</a></li>
+											<li><a href="#daftar">FORM</a></li>
+									</ul>
+							</nav>
 					</div>
-				</div>
 			</header>
 		</div>
 		<main>
 			<!-- introBlock -->
-			<article class="introBlock w-100 d-flex">
+			<article class="introBlock w-100 d-flex" >
 				<!-- vAlign -->
-				<div class="vAlign d-flex w-100 align-items-sm-center">
+				<div class="vAlign d-flex w-100 align-items-sm-center" >
 					<!-- xAlign -->
-					<div class="xAlign w-100 pt-15 pt-md-28 pb-md-14 pt-xl-41 pb-xl-19">
+					<div class="xAlign w-100 pt-15 pt-md-28 pb-md-14 pt-xl-41 pb-xl-19" id="hero">
 						<div class="container">
 							<div class="row">
 								<div class="col-12 col-sm-8 col-md-6">
@@ -101,23 +84,6 @@
 										<img src="images/Dirman.png" class="img-fluid" alt="image description">
 									</div>
 									<!-- ibSocialNetworks -->
-									<ul class="list-unstyled socialNetworks ibSocialNetworks mb-0 d-none d-md-block wow fadeIn" data-wow-delay="4s">
-										<li>
-											<a href="#">
-												<i class="fab fa-facebook-f"><span class="sr-only">facebook</span></i>
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<i class="fab fa-twitter"><span class="sr-only">twitter</span></i>
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<i class="fab fa-linkedin-in"><span class="sr-only">linkedin</span></i>
-											</a>
-										</li>
-									</ul>
 								</div>
 							</div>
 						</div>
@@ -226,7 +192,7 @@
 					<div class="ftAreaWrap position-relative">
 						<!-- footerAside -->
 						<aside class="footerAside pt-6 pb-6 pt-md-10 pb-md-8 pt-lg-16 pb-lg-13 pt-xl-24 pb-xl-18 wow fadeIn">
-							<div id="contact" class="mt-n43 pt-43">
+							<div id="daftar" class="mt-n43 pt-43">
 								<div class="container">
 									<div class="row">
 										<div class="col-12 col-md-6 col-lg-5 col-xl-4">
@@ -254,52 +220,54 @@
 												<h2 class="text-capitalize">
 													<!-- headingTitle -->
 													<strong class="fwMedium d-block text-white position-relative headingTitle text-capitalize mb-3">
-														Mendaftar
+														Ikuti Event Kami
 													</strong>
 													<span class="d-block">Data diri</span>
 												</h2>
 											</header>
 											<!-- messageForm -->
 											<div class="messageForm">
-												<form id="contactForm" action="{{ route('form.store') }}" method="POST">
-                                                    @csrf
-                                                    <div class="row">
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group position-relative">
-                                                                <input id="name" name="name" type="text" class="form-control w-100 d-block" required>
-                                                                <label class="labelAbsolute mb-0 font-weight-normal position-absolute">Nama</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group position-relative">
-                                                                <input id="email" name="email" type="email" class="form-control w-100 d-block" required>
-                                                                <label class="labelAbsolute mb-0 font-weight-normal position-absolute">Email</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group position-relative">
-                                                                <input id="phone" name="phone" type="tel" class="form-control w-100 d-block" required>
-                                                                <label class="labelAbsolute mb-0 font-weight-normal position-absolute">Nomor Whatsapp</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group position-relative">
-                                                                <input id="school" name="school" type="text" class="form-control w-100 d-block" required>
-                                                                <label class="labelAbsolute mb-0 font-weight-normal position-absolute">Asal Sekolah</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group position-relative">
-                                                                <textarea id="class" name="class" class="form-control w-100 d-block textareaInput" required></textarea>
-                                                                <label class="labelAbsolute mb-0 font-weight-normal position-absolute">Kelas</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <button id="form-submit" type="submit" class="btn btnThemeOutline position-relative btnMinSmall mt-4 mt-lg-8">
-                                                        <span class="d-block btnText">Mendaftar</span>
-                                                    </button>
-                                                </form>
+												<form id="contactForm" method="POST">
+                            @csrf
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group position-relative">
+                                        <input id="name" name="name" type="text" class="form-control w-100 d-block" required>
+                                        <label class="labelAbsolute mb-0 font-weight-normal position-absolute">Nama</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group position-relative">
+                                        <input id="email" name="email" type="email" class="form-control w-100 d-block" required>
+                                        <label class="labelAbsolute mb-0 font-weight-normal position-absolute">Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group position-relative">
+                                        <input id="phone" name="phone" type="tel" class="form-control w-100 d-block" required>
+                                        <label class="labelAbsolute mb-0 font-weight-normal position-absolute">Nomor Whatsapp</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group position-relative">
+                                        <input id="school" name="school" type="text" class="form-control w-100 d-block" required>
+                                        <label class="labelAbsolute mb-0 font-weight-normal position-absolute">Asal Sekolah</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group position-relative">
+                                        <textarea id="class" name="class" class="form-control w-100 d-block textareaInput" required></textarea>
+                                        <label class="labelAbsolute mb-0 font-weight-normal position-absolute">Kelas</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button id="form-submit" type="submit" class="btn btnThemeOutline position-relative btnMinSmall mt-4 mt-lg-8">
+																<span class="d-block btnText">Kirim</span>
+														</button>
+                        </form>
 
+												<!-- Tampilkan Daftar Pengguna di Bawah Form -->
+    
 											</div>
 										</div>
 									</div>
@@ -308,12 +276,60 @@
 						</aside>
 					</div>
 
-
-
+					<h2>Daftar Pengguna yang Telah Mengisi Data</h2>
+						@if(isset($users) && count($users) > 0)
+						<table border="1">
+								<thead>
+										<tr>
+												<th>Nama</th>
+												<th>Asal Sekolah</th>
+												<th>Kelas</th>
+										</tr>
+								</thead>
+								<tbody>
+										@foreach ($users as $user)
+												<tr>
+														<td>{{ $user->name }}</td>
+														<td>{{ $user->school }}</td>
+														<td>{{ $user->class }}</td>
+												</tr>
+										@endforeach
+								</tbody>
+						</table>
+						@else
+								<p>Tidak ada data pengguna.</p>
+						@endif
+						
 				</main>
 				</div>
-				
-				
+				<script>
+    $(document).ready(function() {
+        $('#contactForm').on('submit', function(e) {
+            e.preventDefault(); // Mencegah form untuk submit secara default
+            $.ajax({
+                url: "{{ route('contact.store') }}", // URL endpoint
+                type: 'POST',
+                data: $(this).serialize(),
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Tambahkan header CSRF token
+                },
+                success: function(response) {
+                    alert(response.message); // Menampilkan alert sukses
+                },
+                error: function(xhr) {
+                    // Tampilkan pesan error yang lebih spesifik
+                    let errors = xhr.responseJSON.errors;
+                    let errorMessage = 'Terjadi kesalahan: \n';
+                    $.each(errors, function(key, value) {
+                        errorMessage += value + '\n';
+                    });
+                    alert(errorMessage);
+                }
+            });
+        });
+    });
+</script>
+
 	<!-- include jQuery library -->
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<!-- include bootstrap popper JavaScript -->

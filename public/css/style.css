@@ -976,6 +976,129 @@ Page Logo / .logo
 /*------------------------------------------------------------------
 Page Main Navigation / .pgMainNavigation
 -------------------------------------------------------------------*/
+.navbar {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+		background-color: rgba(0, 0, 0, 0);; /* Transparan */
+    backdrop-filter: blur(10px); /* Blur efek */
+}
+
+.navbar-container {
+		width: 100%;
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.logo a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.logo img{
+	width: 100px;
+	height: 100px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    padding: 5px 0;
+    text-transform: uppercase;
+}
+
+.nav-menu ul li a.active {
+    color: #d10056; /* Warna teks aktif */
+    font-weight: bold;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-icon {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    display: block;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.burger-icon::before,
+.burger-icon::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: 0.3s ease;
+}
+
+.burger-icon::before {
+    transform: translateY(-8px);
+}
+
+.burger-icon::after {
+    transform: translateY(8px);
+}
+.menu-toggle {
+    display: none; /* Sembunyikan checkbox */
+}
+/* Responsive styling */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Sembunyikan menu pada layar kecil */
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 9;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-menu ul li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle:checked + .menu-icon + .nav-menu {
+        display: flex; /* Tampilkan menu saat checkbox di-check */
+    }
+
+    .menu-icon {
+        display: block; /* Tampilkan ikon menu burger */
+    }
+}
+
+
 
 .pgMainNavigation .nav-item.anchor-active .nav-link {
 	font-weight: 700;
