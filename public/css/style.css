@@ -966,7 +966,10 @@ Page Main Header / #pageHeader
 Page Logo / .logo
 -------------------------------------------------------------------*/
 
-.logo {
+.logo-ruangroto {
+	/* background-color: skyblue; */
+	height: 100%;
+	object-fit: cover;
 	/* max-width: 300px; */
 }
 

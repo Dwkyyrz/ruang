@@ -37,7 +37,7 @@
 						<div class="row">
 							<div class="col-6 col-md-3">
 								<!-- logo -->
-								<div class="logo">
+								<div class="logo-ruangroto">
 									<a href="index.html">
 										<img src="images/favicons/ruangroto.png" class="img-fluid" alt="scavvios">
 									</a>
