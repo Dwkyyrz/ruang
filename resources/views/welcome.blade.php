@@ -238,7 +238,7 @@
 														<img src="images/favicons/ruangroto.png" class="img-fluid" alt="scavvios">
 													</a>
 												</div>
-												<strong class="h2 d-block mb-4">Ruang<span class="text-white">Roto</span></strong>
+												{{-- <strong class="h2 d-block mb-4">Ruang<span class="text-white">Roto</span></strong> --}}
 												<p>
 													Jadilah bagian dari kami, mulai belajar dan upgrade diri anda
 												</p>
