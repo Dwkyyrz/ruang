@@ -38,8 +38,8 @@
 							<div class="col-6 col-md-3">
 								<!-- logo -->
 								<div class="logo">
-									<a href=="index.html">
-										<img src="images/favicons/logo.svg" class="img-fluid" alt="scavvios">
+									<a href="index.html">
+										<img src="images/favicons/ruangroto.png" class="img-fluid" alt="scavvios">
 									</a>
 								</div>
 							</div>
@@ -235,7 +235,7 @@
 												<!-- ftLogo -->
 												<div class="ftLogo mb-7 mb-lg-12">
 													<a href="#">
-														<img src="images/favicons/logo.svg" class="img-fluid" alt="scavvios">
+														<img src="images/favicons/ruangroto.png" class="img-fluid" alt="scavvios">
 													</a>
 												</div>
 												<strong class="h2 d-block mb-4">Ruang<span class="text-white">Roto</span></strong>
