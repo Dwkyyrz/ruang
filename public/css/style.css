@@ -982,16 +982,16 @@ Page Main Navigation / .pgMainNavigation
     top: 0;
     left: 0;
     z-index: 10;
-		background-color: rgba(0, 0, 0, 0);; /* Transparan */
+		background-color: rgb(0, 0, 0,0);; /* Transparan */
     backdrop-filter: blur(10px); /* Blur efek */
 }
 
 .navbar-container {
 		width: 100%;
     display: flex;
-    justify-content: space-between !important;
+    justify-content: space-evenly !important;
     align-items: center;
-    padding: 10px 40px;
+    /* padding: 10px; */
 }
 
 .logo a {
@@ -1003,7 +1003,7 @@ Page Main Navigation / .pgMainNavigation
 }
 
 .logo img{
-	width: 100px;
+	/* width: 50px; */
 	height: 100px;
 }
 
